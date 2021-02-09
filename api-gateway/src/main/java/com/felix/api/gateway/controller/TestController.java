@@ -5,11 +5,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/gateway")
 public class TestController {
 
-    @GetMapping("/client")
+    @GetMapping("/gateway/client")
     public String test() {
         return "Hello gateway";
+    }
+
+    @GetMapping("/sentinel/test")
+    public String sentinelTest() {
+        return "Hello Sentinel";
     }
 }
