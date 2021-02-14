@@ -18,13 +18,14 @@ spring:
       discovery:
         server-addr: 127.0.0.1:8848 # 注册 nacos
     sentinel:
+      eager: true # 心跳启动
       transport:
         dashboard: localhost:8080 # sentinel dashboard
       # sentinel datasource setting
       datasource:
         ds:
           nacos:
-            server-addr: localhost:8848
-            dataId: ${spring.application.name}-sentinel
-            groupId: DEFAULT_GROUP
-            rule-type: flow
+          server-addr: localhost:8848
+          dataId: ${spring.application.name}-sentinel
+          groupId: DEFAULT_GROUP
+          rule-type: flow
